@@ -6,7 +6,7 @@ import {Example, GameLogic} from '../../components'
 
 class Home extends Component {
   componentDidMount() {
-    this.props.actions.numbers([1,2,3,4,5])
+    //this.props.actions.numbers([1,2,3,4,5])
   }
 
   render() {
@@ -14,7 +14,7 @@ class Home extends Component {
     return (
       <div className="home">
         <Example/>
-        <GameLogic/>
+        <GameLogic updateNumbers={actions.updateNumbers}/>
       </div>
     )
   }

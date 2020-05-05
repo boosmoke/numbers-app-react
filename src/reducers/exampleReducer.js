@@ -5,9 +5,14 @@ const INITIAL_STATE = {
 };
 
 export default function (state = INITIAL_STATE, action) {
-  console.log(action.payload)
+  console.log(action.payload, 'hello')
   switch (action.type) {
     case types.EXAMPLE_ACTION:
+      return {
+        ...state, numbers: action.payload
+      };
+
+    case types.UPDATE_NUMBERS:
       return {
         ...state, numbers: action.payload
       };

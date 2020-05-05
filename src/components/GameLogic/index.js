@@ -36,6 +36,7 @@ export default class GameLogic extends Component {
   }
 
   componentDidMount () {
+    this.props.updateNumbers(this.numbers);
     //console.log(this.shuffle(this.numbers))
   }
     

@@ -30,7 +30,14 @@
 }
 
 #empty-box {
-    background-color: grey;
+    z-index: -1;
+    border: 2px solid #fff;
+    background-color: transparent;
+    cursor: not-allowed;
+}
+
+.reset {
+    padding: 20px;
 }
 
 @media screen and (max-width: 767px) {

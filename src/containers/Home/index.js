@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {bindActionCreators} from 'redux'
 import * as gameActions from '../../actions/numberGameActions'
 import {connect} from 'react-redux'
-import {Example} from '../../components'
+import {Example, GameLogic} from '../../components'
 
 class Home extends Component {
   componentDidMount() {
@@ -14,6 +14,7 @@ class Home extends Component {
     return (
       <div className="home">
         <Example/>
+        <GameLogic/>
       </div>
     )
   }

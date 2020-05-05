@@ -9,7 +9,7 @@ const Example = ({}) =>
       <div className="container">
         <div className="row">
         {numbers.map((number) => {   
-           return (<div className="box">{number}</div>) 
+           return (Number.isInteger(number) ? <div className="box">{number}</div> : <div className="box empty-box">{number}</div>) 
         })}
         </div>
       </div>

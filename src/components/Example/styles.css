@@ -1,0 +1,41 @@
+.container {
+    margin: 50px auto;
+    max-width: 1080px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.row {
+    max-width: 1080px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box {
+    flex: 1 0 21%;
+    border: 2px solid grey;
+    height: 150px;
+    width: 100px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+}
+.box:hover {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+    .box {
+        height: 50px;
+        width: 50px;
+        font-size: 24px;
+    }
+
+    .container {
+        margin-top: 10px;
+    }
+}

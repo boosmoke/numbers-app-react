@@ -28,6 +28,10 @@
     cursor: pointer;
 }
 
+#empty-box {
+    background-color: grey;
+}
+
 @media screen and (max-width: 767px) {
     .box {
         height: 50px;

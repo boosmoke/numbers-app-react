@@ -31,6 +31,29 @@
 
 #empty-box {
     background-color: grey;
+    z-index: 99;
+    cursor: not-allowed;
+}
+
+button {
+    cursor: pointer;
+    padding: 10px;
+}
+
+#cheat {
+    background-color: #fff;
+    position: fixed;
+    top: 100px;
+    right: 100px;
+    box-shadow: none;
+}
+
+.top {
+    display: flex;
+}
+
+.top h4 {
+    margin-right: 20px;
 }
 
 @media screen and (max-width: 767px) {

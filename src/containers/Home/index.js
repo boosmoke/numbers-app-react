@@ -13,7 +13,6 @@ class Home extends Component {
     const  {actions, numbers} = this.props;
     return (
       <div className="home">
-        <Example/>
         <GameLogic updateNumbers={actions.updateNumbers}/>
       </div>
     )

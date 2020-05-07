@@ -136,9 +136,13 @@ class Example extends React.Component {
     let thisy = document.getElementById(number);
     let empty = document.getElementById("empty-box");
 
-    let heighty = thisy.offsetHeight + 20;
-    let widthy = thisy.offsetWidth + 20;
-    // + 20 = MARGIN IN BETWEEN *** MARGIN MUST BE 10 PER BOX ***
+
+    let style = thisy.currentStyle || window.getComputedStyle(thisy);
+    let stylee = style.marginTop.split("px");
+    // MARGIN TOP AND MARGIN BOTTOM MUST BE EQUAL ON ALL BOXES!!!
+
+    let heighty = thisy.offsetHeight + stylee[0] * 2;
+    let widthy = thisy.offsetWidth + stylee[0] * 2;
     
     let em = this.state.numbers.indexOf("");
     let numy = this.state.numbers.indexOf(number);

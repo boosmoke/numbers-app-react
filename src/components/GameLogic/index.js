@@ -68,52 +68,24 @@ class GameLogic extends React.Component {
   
       newy[currentNumber] = "";
       newy[em] = number;
-      /* target.style = "";
-      empty.style = ""; */
+      target.style = "";
+      empty.style = "";
       this.setState({numbers: newy})
       if(this.checkIfWin()) {
         this.setState({win: `CONGRATS! YOU WON IN ${this.state.moves} MOVES!!`});
       }
-    }.bind(this), 300);
+    }.bind(this), 0);
 
   }
 
   animateBox = (target, empty, dir, bool, pixels) => {
     if(bool) {
-      const animationStylesBox = `
-        @keyframes moveTile {
-          from { transform:translate${dir}(0px);}
-          to { transform:translate${dir}(${pixels}px) }
-        }
-        animation: moveTile 300ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
-        `;
-      const animationStylesEmptyBox = `
-        @keyframes moveTile {
-          from { transform:translate${dir}(0px); }
-          to { transform:translate${dir}(-${pixels}px) }
-        }
-        animation: moveTile 300ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
-        `;
-        target.style = animationStylesBox;
-      empty.style = animationStylesEmptyBox;
+      target.style = `transform:translate${dir}(${pixels}px);`;
+      empty.style = `transform:translate${dir}(-${pixels}px);`;
     }
     else {
-      const animationStylesBox = `
-        @keyframes moveTile {
-          from { transform:translate${dir}(0px);}
-          to { transform:translate${dir}(-${pixels}px) }
-        }
-        animation: moveTile 300ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
-        `;
-      const animationStylesEmptyBox = `
-        @keyframes moveTile {
-          from { transform:translate${dir}(0px); }
-          to { transform:translate${dir}(${pixels}px) }
-        }
-        animation: moveTile 300ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
-        `;
-      target.style = animationStylesBox;
-      empty.style = animationStylesEmptyBox;
+      target.style = `transform:translate${dir}(-${pixels}px);`;
+      empty.style = `transform:translate${dir}(${pixels}px);`;
     }
   }
 

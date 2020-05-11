@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
-import exampleReducer from './exampleReducer'
+import numbersGameReducer from './numbersGameReducer'
 
 const numberGameApp = combineReducers({
-  exampleReducer
+  numbersGameReducer
 });
 
 export default numberGameApp

@@ -1,7 +1,7 @@
-import Example from './Example'
 import GameLogic from './GameLogic';
+import HighScores from './HighScores';
 
 export {
-  Example,
-  GameLogic
+  GameLogic,
+  HighScores
 }

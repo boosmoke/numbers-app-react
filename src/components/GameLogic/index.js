@@ -1,14 +1,15 @@
 import React from 'react'
+import {HighScores} from '../';
 import './styles.css'
 
 class GameLogic extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, ""],
+      numbers: [],
       win: "",
       moves: 0
-     };
+    };
   }
 
   win = () => {
@@ -16,7 +17,7 @@ class GameLogic extends React.Component {
   }
   
   shuffle(array) {
-
+    this.setState({win: ""})
     this.setState({moves: 0})
     let currentIndex = array.length;
     let temporaryValue;
@@ -72,6 +73,7 @@ class GameLogic extends React.Component {
       empty.style = "";
       this.setState({numbers: newy})
       if(this.checkIfWin()) {
+        this.props.updateHighscore(this.state.moves)
         this.setState({win: `CONGRATS! YOU WON IN ${this.state.moves} MOVES!!`});
       }
     }.bind(this), 0);
@@ -130,24 +132,41 @@ class GameLogic extends React.Component {
     }
   }
 
-  componentDidMount () {
-    this.shuffle(this.state.numbers);
+  componentDidMount () {    
+    
+  }
+
+  componentDidUpdate(nextProps) {
+    const { gameNumbers } = this.props
+    if (nextProps.gameNumbers !== gameNumbers) {
+      if (gameNumbers) {
+        this.shuffle(gameNumbers);
+      }
+    }
   }
   render() {
     return(
       <div>
         <h1>Numbers Game</h1>
         <div className="container">
-          {this.state.win !== '' && <h2>{this.state.win}</h2>}
-          <h4>Moves: {this.state.moves}</h4>
+          {this.state.win !== '' && 
+          <div>
+            <h2>{this.state.win}</h2>
+            <button className="newGameBtn" onClick={()=> {this.shuffle(this.state.numbers)}}>NEW GAME</button>
+          </div>
+          }
+          {this.props.highScore.length > 0 && <HighScores highScores = {this.props.highScore}/>}
+          <div className="gameContainer">
           <div className="top">
             <button id="reset" onClick={() => this.shuffle(this.state.numbers)}>Reset</button>
+            <h4 className="moves">Moves: {this.state.moves}</h4>
             <button id="cheat" onClick={() => this.win(this.state.numbers)}>Cheat</button>
           </div>
           <div className="row">
             {this.state.numbers.map((number, index) => {   
               return (Number.isInteger(number) ? <div key={index} onClick={() => this.moveBox(number)} id={number} className="box">{number}</div> : <div key={index} id="empty-box" className="box">{number}</div>)
             })}
+          </div>
           </div>
         </div>
       </div>

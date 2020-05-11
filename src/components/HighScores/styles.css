@@ -1,0 +1,17 @@
+.highScore h4 {
+  margin: 6px 0px;
+}
+
+.highScore .score {
+  font-size: 28px;
+  background: #c3c3;
+  border-radius: 50px;
+  display: inline-block;
+  width: 40px;
+  padding: 5px;
+  margin: 0px 6px;
+}
+
+.highScore .score:nth-of-type(odd) {
+  background-color: #69d2ff;
+}

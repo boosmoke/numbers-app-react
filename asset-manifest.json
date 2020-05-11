@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/numbers-app-react/static/css/main.2c780acd.chunk.css",
+    "main.js": "/numbers-app-react/static/js/main.505046ad.chunk.js",
+    "main.js.map": "/numbers-app-react/static/js/main.505046ad.chunk.js.map",
+    "runtime-main.js": "/numbers-app-react/static/js/runtime-main.5adcbab4.js",
+    "runtime-main.js.map": "/numbers-app-react/static/js/runtime-main.5adcbab4.js.map",
+    "static/js/2.a208b627.chunk.js": "/numbers-app-react/static/js/2.a208b627.chunk.js",
+    "static/js/2.a208b627.chunk.js.map": "/numbers-app-react/static/js/2.a208b627.chunk.js.map",
+    "index.html": "/numbers-app-react/index.html",
+    "precache-manifest.704cc53ceb9ba4077d7a7153fa7d655e.js": "/numbers-app-react/precache-manifest.704cc53ceb9ba4077d7a7153fa7d655e.js",
+    "service-worker.js": "/numbers-app-react/service-worker.js",
+    "static/css/main.2c780acd.chunk.css.map": "/numbers-app-react/static/css/main.2c780acd.chunk.css.map",
+    "static/js/2.a208b627.chunk.js.LICENSE.txt": "/numbers-app-react/static/js/2.a208b627.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5adcbab4.js",
+    "static/js/2.a208b627.chunk.js",
+    "static/css/main.2c780acd.chunk.css",
+    "static/js/main.505046ad.chunk.js"
+  ]
+}
